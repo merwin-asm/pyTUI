@@ -1,6 +1,11 @@
 # pyTUI
 TUI - Terminal User Interface | Python modules to code UI's for terminal!
 
+# Note :
+  - Could change your terminal size and font etc, If it didnt change back automatically after the code exit , then make sure you know how to revert it back.
+    
+  - Only for linux
+
 `Make tabs , inputfields , inputbar , render video , have a videoplayer ,render image, render 2D objects,
 render 3D Objects, select files, and more...`
 
@@ -290,6 +295,4 @@ The `TerminalTextbar` class provides a customizable text input interface for ter
 | `render_video`   | None                                                                                                       | Renders the video frames, handles user input for pause/resume, and manages audio synchronization and timeline display.|
 
 
-# Note :
-  - Could change your terminal size and font etc, If it didnt change back automatically after the code exit , then make sure you know how to revert it back.
-    
+

@@ -1,7 +1,7 @@
 # pyTUI
 TUI - Terminal User Interface | Python modules to code UI's for terminal!
 
-<img src="https://komarev.com/ghpvc/?username=merwin-asm-&label=Project%20views&color=0e75b6&style=flat" /> </p>
+<img src="https://komarev.com/ghpvc/?username=merwin-asm-pytui&label=Project%20views&color=0e75b6&style=flat" /> </p>
 
 # Install :
 ```sh

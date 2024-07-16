@@ -1,0 +1,10 @@
+sty
+emoji
+pillow
+numpy
+opencv-python
+ffmpeg
+pygame
+pynput
+simpleaudio
+keyboard

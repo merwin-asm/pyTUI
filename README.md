@@ -1,15 +1,17 @@
 # pyTUI
 TUI - Terminal User Interface | Python modules to code UI's for terminal!
 
-# Note :
+
+`Make tabs , inputfields , inputbar , render video , have a videoplayer ,render image, render 2D objects,
+render 3D Objects, select files, and more...`
+<img src="https://komarev.com/ghpvc/?username=merwin-asm-pytui&label=Project%20views&color=0e75b6&style=flat" /> </p>
+
+
+## Note :
   - Could change your terminal size and font etc, If it didnt change back automatically after the code exit , then make sure you know how to revert it back.
     
   - Only for linux
 
-`Make tabs , inputfields , inputbar , render video , have a videoplayer ,render image, render 2D objects,
-render 3D Objects, select files, and more...`
-
-<img src="https://komarev.com/ghpvc/?username=merwin-asm-pytui&label=Project%20views&color=0e75b6&style=flat" /> </p>
 
 # Install :
 ```sh

@@ -1,6 +1,9 @@
 # pyTUI
 TUI - Terminal User Interface | Python modules to code UI's for terminal!
 
+`Make tabs , inputfields , inputbar , render video , have a videoplayer ,render image, render 2D objects,
+render 3D Objects, select files, and more...`
+
 <img src="https://komarev.com/ghpvc/?username=merwin-asm-pytui&label=Project%20views&color=0e75b6&style=flat" /> </p>
 
 # Install :

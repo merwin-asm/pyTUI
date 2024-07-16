@@ -1,0 +1,62 @@
+from terminal_graphics import TerminalAscii
+import cv2
+import numpy as np
+
+class Combine:
+    def __init__(self, height, width, background_color):
+        self.height = height
+        self.width = width
+        self.background_color = background_color
+        self.canvas = np.full((height, width, 3), background_color, dtype=np.uint8)
+
+    def add_obj(self, obj_filename, x, y, obj_bg_color):
+        obj_img = cv2.imread(obj_filename)
+        
+        if obj_img is None:
+            raise ValueError(f"Could not load image {obj_filename}")
+        
+        obj_h, obj_w = obj_img.shape[:2]
+
+        # Adjust the object image to fit within the canvas dimensions if necessary
+        if x + obj_w > self.width or y + obj_h > self.height:
+            # Calculate the maximum width and height that the object can have
+            max_w = min(obj_w, self.width - x)
+            max_h = min(obj_h, self.height - y)
+            obj_img = cv2.resize(obj_img, (max_w, max_h), interpolation=cv2.INTER_AREA)
+            obj_h, obj_w = obj_img.shape[:2]
+
+        # Define the region of interest on the canvas
+        y1, y2 = y, y + obj_h
+        x1, x2 = x, x + obj_w
+
+        # Create a mask where the background color is found
+        mask = cv2.inRange(obj_img, np.array(obj_bg_color), np.array(obj_bg_color))
+        mask_inv = cv2.bitwise_not(mask)
+
+        # Black-out the area of the object in the ROI on the canvas
+        roi = self.canvas[y1:y2, x1:x2]
+        canvas_bg = cv2.bitwise_and(roi, roi, mask=mask)
+
+        # Take only region of object from object image
+        obj_fg = cv2.bitwise_and(obj_img, obj_img, mask=mask_inv)
+
+        # Place the object in the ROI and modify the main image
+        dst = cv2.add(canvas_bg, obj_fg)
+        self.canvas[y1:y2, x1:x2] = dst
+
+    def save_combined_image(self, output_filename):
+        cv2.imwrite(output_filename, self.canvas)
+if __name__ == "__main__":
+    # Example usage
+    combiner = Combine(200, 100, (0, 0, 0))
+    combiner.add_obj("cuboid.png", 0, 0, [0, 0, 0])
+    #combiner.add_obj("sphere.png", 50, 0, [0, 0, 0])
+    combiner.add_obj("pyramid.png", 50, 10, [0, 0, 0])
+    combiner.add_obj("cylinder.png", 10, 0, [0, 0, 0])
+    combiner.save_combined_image("combined.png")
+
+    # Display the combined image on the terminal
+    ascii_art = TerminalAscii()
+    ascii_art.draw_image("combined.png", 10, 10, 100, 50, border=True, border_color=[255, 0, 255], colored=True)
+    import time
+    time.sleep(3)

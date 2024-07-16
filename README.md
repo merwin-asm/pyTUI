@@ -53,7 +53,9 @@ git clone https://github.com/merwin-asm/pyTUI.git
 | `Cylinder` | `draw`             | Draws a cylinder shape on the image.                                                            | `radius`, `height`, `detail` (optional, default=20)                                                            |
 
 ### terminal3Dcombiner.Combine Class
+
 - adds multiple object images (cuboid, pyramid, cylinder) at different positions, and then saves the combined image
+
 | Method                   | Description                                                                                     | Parameters                                                                                                          |
 |--------------------------|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 | `__init__`               | Constructor for initializing the Combine object with canvas dimensions and background color.   | `height`, `width`, `background_color` (RGB tuple, e.g., `(0, 0, 0)`)                                                |

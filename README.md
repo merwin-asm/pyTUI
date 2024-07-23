@@ -15,8 +15,8 @@ render 3D Objects, select files, and more...`
 
 # Install :
 ```sh
-pip install -r requirements.py
 git clone https://github.com/merwin-asm/pyTUI.git
+pip install -r requirements.py
 ```
 
 # Examples :
